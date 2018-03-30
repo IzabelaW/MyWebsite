@@ -1,0 +1,550 @@
+* {
+    box-sizing: border-box;
+}
+
+.row:after,
+.row:before {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    /* For mobile phones: */
+    width: 100%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+body,h1,h2,h3,h4,h5,h6 {
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url('Img/bgimg-1.jpg');
+    min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+    background-image: url("Img/bgimg-2.jpg");
+    min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+    background-image: url("Img/travel%20insurance.jpeg");
+    min-height: 400px;
+}
+
+.hover-opacity {cursor: pointer;}
+
+.sit-on-top {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}
+
+.navbar {
+    width: 100%;
+    overflow: hidden;
+}
+
+.center .navbar {
+    display: inline-block;
+    width: auto;
+}
+
+.navbar .navbarItem {
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+}
+
+.button {
+/*    background-color: darkgrey;*/
+    padding: 0.5vw;
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+/*    font-weight: bold;*/
+}
+
+.button:hover {
+    background-color: #ccc;
+}
+
+.navbar .button {
+    white-space: normal;
+}
+
+.white {
+    color: #000;
+    background-color: #fff;
+}
+
+.padding {
+    padding: 8px 16px;
+}
+
+.padding-large {
+    padding: 12px 24px;
+}
+
+.large {
+    font-size: 4vw;
+}
+
+.wide {
+    letter-spacing: 0.5vw;
+}
+
+.opacity-min {
+    opacity: 0.75;
+}
+
+.hover-opacity-off:hover {
+    opacity: 1;
+}
+
+.animate-opacity {
+    animation: opac 0.8s;
+}
+
+@keyframes opac {
+    from{opacity:0} to{opacity:1}
+}
+
+.animate-opacity-mid {
+    animation: opac-mid 0.8s;
+}
+
+@keyframes opac-mid {
+    from{opacity:0} to{opacity:0.5}
+}
+
+.hide-on-small {
+    display: none;
+}
+
+.display-container {
+    position: relative;
+}
+
+.display-middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+
+.center {
+    text-align: center;
+}
+
+.under {
+    z-index: -1;
+}
+
+.square {
+    width: 90vw;
+    height: 15vw;
+    opacity: 0.5;
+    border: 1vw solid white;
+}
+
+.content {
+    padding:0.01em 16px;
+    max-width: 980px;
+    margin: auto;
+}
+
+blockquote {
+    font-family: Georgia, "Times new roman", Times;
+    font-style: italic; 
+    color: #333;
+    width: 75%;
+    border-left: 5px solid #ccc;
+    padding-left: 25px;
+    position: relative;
+}
+
+blockquote p:last-child {
+    font-size: 0.75em;
+    color: #777;
+}
+
+blockquote p:last-child:before {
+    content: '—';
+    margin-right: 5px;
+}
+
+blockquote:after {
+    position: absolute;
+    bottom: 0;
+    right: -5%;
+    color: #ccc;
+    font-size: 10em;
+    line-height: 0;
+    content: '"';
+}
+
+.round {
+    border-radius: 8px;
+}
+
+.image{
+    max-width: 100%;
+    height: auto
+}
+
+.text-white {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.semesterBlock {
+    background-color: darkgrey;
+    padding: 2vw;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.grey {
+    color:#000;
+    background-color:#9e9e9e;
+}
+
+.light-grey {
+    color:#000;
+    background-color:#f1f1f1;
+}
+
+.modalDialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+  pointer-events: none;
+  overflow-y: auto;
+}
+
+.modalDialog:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalDialog--wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+.modalDialog--inner {
+  width: 70vw;
+  position: relative;
+  margin: 0 auto;
+  padding: 1vw 2vw;
+  background: white;
+  z-index: 2;
+}
+
+.modalDialog--close {
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  z-index: 3;
+  float: right;
+  display: flex;
+  justify-content: center;
+}
+
+.modalDialog--close:before {
+  content: "x";
+  color: #222;
+}
+
+.modalDialog--close:hover {
+  text-decoration: none;
+}
+
+.modalDialog--mask {
+  background: #000;
+  opacity: 0;
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  right: 0;
+  z-index: 1;
+  transition: opacity 300ms ease-in;
+}
+
+:target .modalDialog--mask {
+  opacity: 0.7;
+}
+
+.modalDialog--content {
+    color: black;
+    text-align: center
+}
+
+.modalDialog--content h1 {
+    border-bottom: 2px solid grey;
+}
+
+.left-border {
+    border: 2px solid #87C1C2;
+/*    background: #BFE5E6;*/
+    text-align: left;
+}
+
+.right-border {
+    border: 2px solid #41555E;
+    padding-left: 1vw;
+/*    background: #C8CCCC;*/
+    text-align: left;
+}
+
+.left-h1 {
+    padding-left: 1vw;
+    text-align: left;
+    color: #5EBABD;
+}
+
+.right-h1 {
+    padding-left: 1vw;
+    text-align: left;
+    color: #41555E;
+}
+
+.shadow {
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.left-border:hover,
+.right-border:hover {
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 2vw;
+  left: 2vw;
+  z-index: 1;
+  
+}
+
+#menuToggle input
+{
+  display: block;
+  width: auto;
+  height: auto;
+  position: absolute;
+
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #ededed;
+  list-style-type: none;
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+#menu li:hover {
+    opacity: 0.5;
+}
+
+.link {
+    font-weight: bold;
+    text-decoration: none;
+    color: #777;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.hide-small {
+    display: none;
+}
+
+@media only screen and (max-width: 763px) and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+    #menuToggle { display: none; }
+    .navbar { display: block; }
+    .hide-small { display: block; }
+}
+
+@media only screen and (min-width: 764px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    #menuToggle { display: none; }
+    .navbar { display: block; }
+    .hide-small { display: block; }
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
